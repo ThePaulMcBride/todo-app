@@ -15,10 +15,12 @@ app.controller('TodoCtrl', function($scope) {
   localStorage.setItem('todos', JSON.stringify($scope.todos));
 
   $scope.addTodo = function () {
-    $scope.todos.push({
-      task: $scope.todoTask,
-      done: false
-    });
+    if ($scope.todoTask !== '') {
+      $scope.todos.push({
+        task: $scope.todoTask,
+        done: false
+      });
+    };
 
     $scope.todoTask = "";
 
