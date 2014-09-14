@@ -3,12 +3,12 @@ app.controller('TodoCtrl', function($scope) {
   $scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) :
   [
     {
-      task: 'Build todo app',
+      task: 'Make some Todos',
       done: false
     },
     {
-      task: 'Update Portfolio',
-      done: true
+      task: 'Complete some Todos',
+      done: false
     }
   ];
 
