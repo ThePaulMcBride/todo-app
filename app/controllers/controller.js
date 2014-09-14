@@ -1,19 +1,6 @@
-app.controller('TodoCtrl', function($scope) {
-  $scope.saved = localStorage.getItem('todos');
-  $scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) :
-  [
-    {
-      task: 'Make some Todos',
-      done: false
-    },
-    {
-      task: 'Complete some Todos',
-      done: false
-    }
-  ];
-
-  localStorage.setItem('todos', JSON.stringify($scope.todos));
-
+app.controller('TodoCtrl', function($scope, dataFactory) {
+  
+  $scope.todos = dataFactory.getTodos();
   $scope.todoTask = "";
 
   $scope.addTodo = function () {
@@ -25,17 +12,41 @@ app.controller('TodoCtrl', function($scope) {
     };
 
     $scope.todoTask = "";
-
-    localStorage.setItem('todos', JSON.stringify($scope.todos));
+    dataFactory.storeTodos();
   };
 
   $scope.updateTodo = function () {
-    $scope.todos = $scope.todos;
-    localStorage.setItem('todos', JSON.stringify($scope.todos));
+    dataFactory.storeTodos();
   };
 
   $scope.removeTodo = function (todo) {
     $scope.todos.splice($scope.todos.indexOf(todo), 1);
-    localStorage.setItem('todos', JSON.stringify($scope.todos));
+    dataFactory.storeTodos();
   };
+});
+
+app.factory('dataFactory', function () {
+  var data = {};
+  var saved = localStorage.getItem('todos');
+  var todos = (saved !==null) ? JSON.parse(saved) :
+  [
+    {
+      task: 'Make some Todos',
+      done: false
+    },
+    {
+      task: 'Complete some Todos',
+      done: false
+    }
+  ];
+
+  data.getTodos = function () {
+    return todos;
+  };
+
+  data.storeTodos = function () {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  return data;
 });
