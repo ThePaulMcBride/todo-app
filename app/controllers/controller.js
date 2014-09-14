@@ -14,6 +14,8 @@ app.controller('TodoCtrl', function($scope) {
 
   localStorage.setItem('todos', JSON.stringify($scope.todos));
 
+  $scope.todoTask = "";
+
   $scope.addTodo = function () {
     if ($scope.todoTask !== '') {
       $scope.todos.push({
