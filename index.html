@@ -48,7 +48,7 @@
             <div class="input-group input-group-lg">
               <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span>
               <form ng-submit="addTodo()"><input ng-model="todoTask" type="text" class="form-control input-lg" placeholder="What needs to be done?" required></form>
-              <span class="input-group-btn"><button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button></span>
+              <span class="input-group-btn"><button ng-click="addTodo()" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button></span>
             </div>
           </div>
         </div>
