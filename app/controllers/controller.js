@@ -23,6 +23,14 @@ app.controller('TodoCtrl', function($scope, dataFactory) {
     $scope.todos.splice($scope.todos.indexOf(todo), 1);
     dataFactory.storeTodos();
   };
+
+  $scope.removeCompletedTodos = function() {
+    angular.forEach($scope.todos, function(todo){
+      if (todo.done)
+        $scope.todos.splice($scope.todos.indexOf(todo), 1);
+    });
+    dataFactory.storeTodos();
+  };
 });
 
 app.factory('dataFactory', function () {
