@@ -32,6 +32,14 @@ app.controller('TodoCtrl', function($scope, dataFactory) {
     };
     dataFactory.storeTodos();
   };
+
+  $scope.remaining = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo){
+      count+= todo.done ? 0 : 1;
+    });
+    return count;
+  };
 });
 
 app.factory('dataFactory', function () {
