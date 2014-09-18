@@ -21,7 +21,7 @@
       <div id="todoapp" ng-controller="TodoCtrl">
       
         <!-- Tasks List -->
-        <div class="row">
+        <div ng-show="todos.length" class="row">
           <div class="col-md-8 col-md-offset-2">
             <table class="table">
               <thead>
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Extra Controls -->
-        <div class="row">
+        <div ng-show="todos.length" class="row">
           <div class="col-md-8 col-md-offset-2">
             <p class="pull-left remaining-tasks">{{remaining()}} of {{todos.length}} tasks remaining</p>
             <button ng-click="removeCompletedTodos()" class="btn btn-danger pull-right">Remove Completed Items <i class="glyphicon glyphicon-trash"></i></button>
