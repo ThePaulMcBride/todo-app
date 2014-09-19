@@ -7,9 +7,75 @@
 }
 
 .input-group {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .remaining-tasks {
   margin-top: 5px;
 }
+
+#todoapp {
+  margin-top: 25px;
+}
+
+#todoapp h2 {
+  text-align: center;
+}
+
+html,body {
+  height:100%;   
+}
+
+header {
+  background-color: #428bca;
+}
+
+header h1 {
+  margin-top: 10px;
+  color: #fff;
+}
+
+footer p {
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  body {
+   display: table; 
+   margin: 0 auto;
+  }
+
+  .contain {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+
+  .container-cell {  
+    height: 100%;
+    display: table-cell;   
+    vertical-align: middle;    
+  }
+
+  header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  table {
+    font-size: 16px;
+  }
+}
+
