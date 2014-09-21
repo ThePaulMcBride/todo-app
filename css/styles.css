@@ -32,6 +32,7 @@ header {
 }
 
 header h1 {
+  text-align: center;
   margin-top: 10px;
   color: #fff;
 }
@@ -79,3 +80,22 @@ footer p {
   }
 }
 
+@media (max-width: 400px) {
+  input.form-control.input-lg.ng-pristine.ng-invalid.ng-invalid-required,
+  input.form-control.input-lg.ng-dirty.ng-valid.ng-valid-require,
+  input.form-control.input-lg.ng-dirty.ng-invalid.ng-invalid-required {
+    font-size: 13px;
+  }
+  
+  p.pull-left.remaining-tasks.ng-binding {
+    float: none !important;
+  }
+
+  button.btn.btn-danger.pull-right {
+    float: none !important;
+  }
+
+  .controls {
+    text-align: center;
+  }
+}
